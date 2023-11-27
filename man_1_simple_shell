@@ -1,4 +1,4 @@
-.TH Simple Shell 3 "November 2023" "Simple Shell Manual" 
+.TH Name "November 2023" "Simple Shell Manual" 
 
 .SH Simple Shell
 
@@ -8,3 +8,8 @@
 .SH DESCRIPTION
 
 .SS Options
+
+.SH FILES
+
+.SH AUTHORS
+Wolfgang P & Jackie L
