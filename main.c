@@ -1,8 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-int main(int ac, char **argv)
+/**
+ * main - I don't know yet
+ *
+ * Return: :)
+ */
+
+int main(int argc, char **argv)
 {
-
-	return (0);
+	return ();
 }
