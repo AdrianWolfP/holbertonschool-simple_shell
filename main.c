@@ -20,10 +20,11 @@ int main(int argc, char **argv)
 		perror("Error");
 		return (1);
 	}
-	while (ch = getline(&buffer, &size, stdin) != 1)
+	while ((ch = getline(&buffer, &size, stdin)) != 1)
 	{
-		prinf("$ ");
-
+		printf("$ ");
 	}
+
+	free(buffer)
 	return (0);
 }
