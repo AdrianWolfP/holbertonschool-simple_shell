@@ -12,15 +12,18 @@ int main(int argc, char **argv)
 {
 	char *buffer;
 	size_t size = 32;
-	size_t chara;
+	size_t ch;
 
-	buffer = ((chara*)malloc (sizeof(char));
+	buffer = malloc(size * sizeof(char);
 	if (buffer == NULL)
 	{
 		perror("Error");
+		return (1);
 	}
+	while (ch = getline(&buffer, &size, stdin) != 1)
+	{
+		prinf("$ ");
 
-	prinf("$: ");
-	chara = getline(&buffer, &size, stdin);
+	}
 	return (0);
 }
