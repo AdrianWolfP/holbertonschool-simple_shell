@@ -10,5 +10,17 @@
 
 int main(int argc, char **argv)
 {
-	return ();
+	char *buffer;
+	size_t size = 32;
+	size_t chara;
+
+	buffer = ((chara*)malloc (sizeof(char));
+	if (buffer == NULL)
+	{
+		perror("Error");
+	}
+
+	prinf("$: ");
+	chara = getline(&buffer, &size, stdin);
+	return (0);
 }
