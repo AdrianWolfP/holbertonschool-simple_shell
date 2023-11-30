@@ -3,12 +3,47 @@
 #include <string.h>
 
 /**
- * main - I don't know yet
+ * main - gives command line with prompt $ and reads imput
+ * from user infinitely until user presses ctr-d
  *
- * Return: :)
+ * Return: 0 on successful execution
  */
 
-int main(int argc, char **argv)
+int main(void)
 {
-	return ();
+	char *buffer;
+	size_t size = 51;
+	ssize_t ch;
+
+	buffer = malloc(size * sizeof(char));
+	if (buffer == NULL)
+	{
+		perror("Error");
+		return (1);
+	}
+	while ((ch = getline(&buffer, &size, stdin)) != 1)
+	{
+		printf("$ ");
+	}
+
+	free(buffer)
+	return (0);
+}
+/**
+ * parse - tokenizes string with delimiters
+ *
+ * @input: string to be tokenized
+ */
+void parse(char *input)
+{
+	char *token;
+	char delims[] = " :/";
+
+	token = strtok(input, delims);
+
+	while (token != NULL)
+	{
+		printf("%s\n", token);
+		token = strtok(NULL, delims);
+	}
 }
