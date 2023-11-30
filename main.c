@@ -23,7 +23,7 @@ int main(void)
 	}
 	while ((ch = getline(&buffer, &size, stdin)) != 1)
 	{
-		printf("$ ");
+		printf("\n$ ");
 	}
 
 	free(buffer);
