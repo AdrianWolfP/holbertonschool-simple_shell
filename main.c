@@ -3,18 +3,19 @@
 #include <string.h>
 
 /**
- * main - I don't know yet
+ * main - gives command line with prompt $ and reads imput
+ * from user infinitely until user presses ctr-d
  *
- * Return: :)
+ * Return: 0 on successful execution
  */
 
-int main(int argc, char **argv)
+int main(void)
 {
 	char *buffer;
-	size_t size = 32;
-	size_t ch;
+	size_t size = 51;
+	ssize_t ch;
 
-	buffer = malloc(size * sizeof(char);
+	buffer = malloc(size * sizeof(char));
 	if (buffer == NULL)
 	{
 		perror("Error");
@@ -27,4 +28,22 @@ int main(int argc, char **argv)
 
 	free(buffer)
 	return (0);
+}
+/**
+ * parse - 
+ *
+ * @imput:
+ */
+void parse(char *imput)
+{
+	char *token;
+	char delims[] = " :/";
+
+	token = strtok(imput, delims);
+
+	while (token != NULL)
+	{
+		printf("%s\n" token);
+	token =strtok(NULL, delims);
+	}
 }

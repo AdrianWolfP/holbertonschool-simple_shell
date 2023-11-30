@@ -1,6 +1,8 @@
 #ifndef HEADER
 #define HEADER
 
-int main(int argc, char **argv);
+int main(void);
+
+void parse(char *imput);
 
 #endif
