@@ -30,20 +30,20 @@ int main(void)
 	return (0);
 }
 /**
- * parse - 
+ * parse - tokenizes string with delimiters
  *
- * @imput:
+ * @input: string to be tokenized
  */
-void parse(char *imput)
+void parse(char *input)
 {
 	char *token;
 	char delims[] = " :/";
 
-	token = strtok(imput, delims);
+	token = strtok(input, delims);
 
 	while (token != NULL)
 	{
-		printf("%s\n" token);
-	token =strtok(NULL, delims);
+		printf("%s\n", token);
+		token = strtok(NULL, delims);
 	}
 }
