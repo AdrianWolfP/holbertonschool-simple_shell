@@ -26,7 +26,7 @@ int main(void)
 		printf("$ ");
 	}
 
-	free(buffer)
+	free(buffer);
 	return (0);
 }
 /**
