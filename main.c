@@ -12,13 +12,13 @@
 
 int main(void)
 {
-	char *buffer = 0;
+	char *buffer = NULL;
 	size_t size = 0;
 	ssize_t ch;
 	char *token;
 	char delims[] = " :/";
 	char *args[10];
-	int x;
+	int x = 0;
 
 	while (1)
 	{
@@ -32,7 +32,7 @@ int main(void)
 		{
 			token = strtok(buffer, delims);
 
-			while (token != NULL)
+			while (token != NULL && x < 9)
 			{
 				args[x] = token;
 				token = strtok(NULL, delims);
