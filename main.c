@@ -16,7 +16,7 @@ int main(void)
 	ssize_t ch;
 	char *token;
 	char delims[] = " :/";
-	char *args[];
+	char *args[10];
 	int x;
 
 	while (1)
