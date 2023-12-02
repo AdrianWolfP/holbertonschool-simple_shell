@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-void parse(char *input);
-
 /**
  * main - gives command line with prompt $ and reads imput
  * from user infinitely until user presses ctr-d
@@ -27,7 +25,7 @@ int main(void)
 	}
 	while (1)
 	{
-		printf("$ ");
+		printf("\n$ ");
 
 		ch = getline(&buffer, &size, stdin);
 
