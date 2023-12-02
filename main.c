@@ -28,6 +28,8 @@ int main(void)
 		printf("\n$ ");
 
 		ch = getline(&buffer, &size, stdin);
+		if (ch == -1)
+			break;
 
 		if (ch > 1)
 		{
