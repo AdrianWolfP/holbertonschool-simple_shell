@@ -38,6 +38,12 @@ int main(void)
 				x++;
 			}
 			args[x] = NULL;
+
+			if (execve == -1)
+			{
+				perror("");
+				exit;
+			}
 		}
 	}
 
