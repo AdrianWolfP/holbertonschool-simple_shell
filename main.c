@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <Lunistd.h>
 
 /**
  * main - gives command line with prompt $ and reads imput
@@ -39,10 +40,10 @@ int main(void)
 			}
 			args[x] = NULL;
 
-			if (execve == -1)
+			if (execve(args[0], args) == -1)
 			{
-				perror("");
-				exit;
+				perror("ERROR");
+				exit(ERROR);
 			}
 		}
 	}
