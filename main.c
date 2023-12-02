@@ -40,10 +40,10 @@ int main(void)
 			}
 			args[x] = NULL;
 
-			if (execve(args[0], args) == -1)
+			if (execve(args[0], args, NULL) == -1)
 			{
-				perror("ERROR");
-				exit(ERROR);
+				perror("execve");
+				exit(EXIT_FAILURE);
 			}
 		}
 	}
