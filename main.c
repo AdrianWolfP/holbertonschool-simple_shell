@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <Lunistd.h>
+#include <unistd.h>
 
 /**
  * main - gives command line with prompt $ and reads imput
