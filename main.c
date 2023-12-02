@@ -16,6 +16,8 @@ int main(void)
 	char *buffer;
 	size_t size = 0;
 	ssize_t ch;
+	char *token;
+	char delims[] = " :/";
 
 	buffer = malloc(size * sizeof(char));
 	if (buffer == NULL)
@@ -31,27 +33,16 @@ int main(void)
 
 		if (ch > 1)
 		{
-			parse(buffer);
+			token = strtok(buffer, delims);
+
+			while (token != NULL)
+			{
+				printf("%s\n", token);
+				token = strtok(NULL, delims);
+			}
 		}
+	}
 
 	free(buffer);
 	return (0);
-}
-/**
- * parse - tokenizes string with delimiters
- *
- * @input: string to be tokenized
- */
-void parse(char *input)
-{
-	char *token;
-	char delims[] = " :/";
-
-	token = strtok(input, delims);
-
-	while (token != NULL)
-	{
-		printf("%s\n", token);
-		token = strtok(NULL, delims);
-	}
 }
