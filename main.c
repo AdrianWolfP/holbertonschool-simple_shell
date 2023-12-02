@@ -11,18 +11,14 @@
 
 int main(void)
 {
-	char *buffer;
+	char *buffer = 0;
 	size_t size = 0;
 	ssize_t ch;
 	char *token;
 	char delims[] = " :/";
+	char *args[];
+	int x;
 
-	buffer = malloc(size * sizeof(char));
-	if (buffer == NULL)
-	{
-		perror("Error");
-		return (1);
-	}
 	while (1)
 	{
 		printf("\n$ ");
@@ -37,9 +33,11 @@ int main(void)
 
 			while (token != NULL)
 			{
-				printf("%s\n", token);
+				args[x] = token;
 				token = strtok(NULL, delims);
+				x++;
 			}
+			args[x] = NULL;
 		}
 	}
 
