@@ -12,7 +12,7 @@
 int main(void)
 {
 	char *buffer;
-	size_t size = 51;
+	size_t size = 0;
 	ssize_t ch;
 
 	buffer = malloc(size * sizeof(char));
@@ -21,10 +21,16 @@ int main(void)
 		perror("Error");
 		return (1);
 	}
-	while ((ch = getline(&buffer, &size, stdin)) != 1)
+	while (1)
 	{
-		printf("\n$ ");
-	}
+		printf("$ ");
+
+		ch = getline(&buffer, &size, stdin);
+
+		if (ch > 1)
+		{
+			parse(buffer);
+		}
 
 	free(buffer);
 	return (0);
