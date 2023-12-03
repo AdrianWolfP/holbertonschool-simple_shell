@@ -15,6 +15,7 @@ void comandex(char *args[])
 {
 	pid_t pid = fork();
 	int stat;
+	extern char **environ;
 
 	if (pid == -1)
 	{
