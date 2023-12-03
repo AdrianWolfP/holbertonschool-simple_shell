@@ -6,10 +6,10 @@
 /*
  * commandex: command execution for parent/child process
  *
- * @arg: argument strings
+ * @args: argument strings
  */
 
-void comandex(char *arg[])
+void comandex(char *args[])
 {
 	pid_t pid = fork();
 
