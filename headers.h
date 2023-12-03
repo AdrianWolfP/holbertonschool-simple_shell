@@ -3,6 +3,6 @@
 
 int main(void);
 
-void parse(char *imput);
+void comandex(char *arg[]);
 
 #endif
