@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <headers.h>
+#include "headers.h"
 
 /**
  * main - gives command line with prompt $ and reads imput
