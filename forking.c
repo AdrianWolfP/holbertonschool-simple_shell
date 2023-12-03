@@ -12,6 +12,7 @@
 void comandex(char *args[])
 {
 	pid_t pid = fork();
+	int stat;
 
 	if (pid == -1)
 	{
@@ -28,7 +29,7 @@ void comandex(char *args[])
 	}
 	else
 	{
-		if (wait)
+		if (wait(&stat) == -1)
 		{
 			perror("wait");
 			exit(EXIT_FAILURE);
