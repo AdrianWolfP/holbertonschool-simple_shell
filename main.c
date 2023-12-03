@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <headers.h>
 
 /**
  * main - gives command line with prompt $ and reads imput
@@ -12,13 +13,12 @@
 
 int main(void)
 {
-	char *buffer = NULL;
-	size_t size = 0;
-	ssize_t ch;
+	char *buffer = NULL, *args[10];
+	size_t size = 0, ch;
 	char *token;
 	char delims[] = " :/";
-	char *args[10];
-	int x = 0;
+	int x;
+	pid_t pid;
 
 	while (1)
 	{
@@ -30,6 +30,7 @@ int main(void)
 
 		if (ch > 1)
 		{
+			x = 0
 			token = strtok(buffer, delims);
 
 			while (token != NULL && x < 9)
@@ -38,16 +39,12 @@ int main(void)
 				token = strtok(NULL, delims);
 				x++;
 			}
+
 			args[x] = NULL;
 
-			if (execve(args[0], args, NULL) == -1)
-			{
-				perror("execve");
-				exit(EXIT_FAILURE);
-			}
+			comandex(arg);
 		}
 	}
-
 	free(buffer);
 	return (0);
 }
