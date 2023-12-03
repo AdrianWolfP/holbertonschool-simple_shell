@@ -14,7 +14,8 @@
 int main(void)
 {
 	char *buffer = NULL, *args[10];
-	size_t size = 0, ch;
+	size_t size = 0;
+	ssize_t ch;
 	char *token;
 	char delims[] = " :/";
 	int x;
@@ -29,7 +30,7 @@ int main(void)
 
 		if (ch > 1)
 		{
-			x = 0
+			x = 0;
 			token = strtok(buffer, delims);
 
 			while (token != NULL && x < 9)
@@ -41,7 +42,7 @@ int main(void)
 
 			args[x] = NULL;
 
-			comandex(arg);
+			comandex(args);
 		}
 	}
 	free(buffer);
