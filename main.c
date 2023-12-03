@@ -18,7 +18,6 @@ int main(void)
 	char *token;
 	char delims[] = " :/";
 	int x;
-	pid_t pid;
 
 	while (1)
 	{
