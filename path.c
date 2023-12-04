@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unstd.h>
+#include <unistd.h>
 #include "headers.h"
 /**
  * get_path - function searching enviorment list to find the
