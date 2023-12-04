@@ -15,7 +15,7 @@ char *get_path(char *command)
 	char *path = getenv("PATH");
 	char *path_copy = strdup(path);
 	char *full_path = NULL;
-	char tok;
+	char *tok;
 
 	if (path == NULL || path_copy == NULL)
 		return(NULL);
