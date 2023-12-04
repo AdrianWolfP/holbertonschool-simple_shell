@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include "headers.h"
 
+void builtin(char *args[]);
 /**
  * main - gives command line with prompt $ and reads imput
  * from user infinitely until user presses ctr-d
@@ -43,6 +44,7 @@ int main(void)
 			args[x] = NULL;
 
 			comandex(args);
+			builtin(args);
 		}
 	}
 	free(buffer);
