@@ -43,6 +43,7 @@ int main(void)
 			args[x] = NULL;
 
 			comandex(args);
+			printpids();
 		}
 	}
 	free(buffer);
