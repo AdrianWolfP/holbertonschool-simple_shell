@@ -7,4 +7,6 @@ void comandex(char *arg[]);
 
 void printpids();
 
+char *get_path(char *command);
+
 #endif

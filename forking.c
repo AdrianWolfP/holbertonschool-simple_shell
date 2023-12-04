@@ -15,6 +15,7 @@ void comandex(char *args[])
 {
 	pid_t pid = fork();
 	int stat;
+	extern char **environ;
 	char *command_path;
 
 	command_path = get_path(args[0]);
