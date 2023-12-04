@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unstd.h>
 #include "headers.h"
 /**
  * get_path - function searching enviorment list to find the
@@ -23,7 +24,7 @@ char *get_path(char *command)
 	tok = strtok(path_copy, ":");
 	while (tok != NULL)
 	{
-		full_path = malloc(strlen(tok) = strlen(command) + 2);
+		full_path = malloc(strlen(tok) == strlen(command) + 2);
 		if (full_path == NULL)
 		{
 			return(NULL);
@@ -34,7 +35,7 @@ char *get_path(char *command)
 
 		if (access(full_path, X_OK) == 0)
 		{
-			fee();
+			free(full_path);
 			return(full_path);
 		}
 
