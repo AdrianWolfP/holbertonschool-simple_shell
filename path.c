@@ -25,4 +25,17 @@ char *get_path(char *command)
 	tok = strtok(path_copy, ":");
 	while (tok != NULL)
 	{
+		if (full_path == NULL)
+		{
+			return(NULL);
+		}
+		strcpy(full_path, tok);
+		strcat(full_path, command);
 
+
+		free(full_path);
+		tok = strtok(NULL, ":");
+	}
+	free(path_copy);
+	return(NULL);
+}
