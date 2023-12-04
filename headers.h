@@ -1,6 +1,10 @@
-#ifndef HEADER
-#define HEADER
-char *get_path*(char *command)
-int main(int argc, char **argv);
+#ifndef HEADER_
+#define HEADER_
+
+int main(void);
+
+void comandex(char *arg[]);
+
+char *get_path*(char *command);
 
 #endif

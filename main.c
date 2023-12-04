@@ -1,14 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include "headers.h"
 
 /**
- * main - I don't know yet
+ * main - gives command line with prompt $ and reads imput
+ * from user infinitely until user presses ctr-d
  *
- * Return: :)
+ * Return: 0 on successful execution
  */
 
-int main(int argc, char **argv)
+int main(void)
 {
-	return ();
+	char *buffer = NULL, *args[10];
+	size_t size = 0;
+	ssize_t ch;
+	char *token;
+	char delims[] = " :/";
+	int x;
+
+	while (1)
+	{
+		printf("\n$ ");
+
+		ch = getline(&buffer, &size, stdin);
+		if (ch == -1)
+			break;
+
+		if (ch > 1)
+		{
+			x = 0;
+			token = strtok(buffer, delims);
+
+			while (token != NULL && x < 9)
+			{
+				args[x] = token;
+				token = strtok(NULL, delims);
+				x++;
+			}
+
+			args[x] = NULL;
+
+			comandex(args);
+		}
+	}
+	free(buffer);
+	return (0);
 }
