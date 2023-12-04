@@ -16,7 +16,14 @@ void comandex(char *args[])
 	pid_t pid = fork();
 	int stat;
 	extern char **environ;
+	char *command_path;
 
+	command_path = get_path(args[0]);
+	if (command_path  == NULL)
+	{
+		printf("Error, %s", args[0]);
+		return;
+	}
 	if (pid == -1)
 	{
 		perror("fork");
@@ -24,11 +31,10 @@ void comandex(char *args[])
 	}
 	else if (pid == 0)
 	{
-		if (execve(args[0], args, environ) == -1)
-		{
-			perror("execve");
-			exit(EXIT_FAILURE);
-		}
+		execve(command_path, args, environ);
+		perror("execve");
+		exit(EXIT_FAILURE);
+	
 	}
 	else
 	{
@@ -38,4 +44,5 @@ void comandex(char *args[])
 			exit(EXIT_FAILURE);
 		}
 	}
+	free(command_path);
 }
