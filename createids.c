@@ -2,15 +2,18 @@
 #include <stdio.h>
 #include <sys/wait.h>
 #include <unistd.h>
-
+#include "headers.h"
 /**
- * main - PID
+ * main - creates child processes and prints the PID for each
  *
  * Return: Always 0
  */
-int main()
+
+void printpids()
 {
-	for(int i = 0; i < 5 ; i++)
+	int i;
+	
+	for(i = 0; i < 5 ; i++)
 	{
 		if(fork() == 0)
 		{
@@ -18,6 +21,6 @@ int main()
 			exit(0);
 		}
 	}
-	for(int i = 0; i < 5 ; i++)
-	wait(NULL);
+	for(i = 0; i < 5 ; i++)
+		wait(NULL);
 }
