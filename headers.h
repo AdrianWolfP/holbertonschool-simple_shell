@@ -9,4 +9,6 @@ void printpids();
 
 char *get_path(char *command);
 
+void builtin(char *args[]);
+
 #endif
