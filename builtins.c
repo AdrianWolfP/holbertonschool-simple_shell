@@ -14,13 +14,13 @@ void builtin(char *args[])
 	struct dirent *start;
 	int x;
 
-	if (args[] == NULL)
+	if (args[1] == NULL)
 	{
 		if (dir == NULL)
 			return;
-		while((start = readdir(dir)) = != NULL)
+		while((start = readdir(dir)) != NULL)
 		{
-			printf("%s", start);
+			printf("%s", start->d_name);
 		}
 
 		closedir(dir);
