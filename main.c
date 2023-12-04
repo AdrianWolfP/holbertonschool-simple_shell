@@ -15,9 +15,8 @@ void builtin(char *args[]);
 int main(void)
 {
 	char *buffer = NULL, *args[10];
-	size_t buffsizesize = 1024;
+	size_t buffsize = 1024;
 	ssize_t ch;
-	char *buffer = malloc(buffersize * sizeof(char));
 	char *token;
 	char delims[] = " :/";
 	int x;
