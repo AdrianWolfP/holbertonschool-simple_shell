@@ -24,7 +24,7 @@ char *get_path(char *command)
 	tok = strtok(path_copy, ":");
 	while (tok != NULL)
 	{
-		full_path = malloc(strlen(tok) + strlen(command) + 2);
+		full_path = malloc(strlen(tok) + strlen(command) + 3);
 		if (full_path == NULL)
 		{
 			return(NULL);
