@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <dirent.h>
 #include "headers.h"
 /**
@@ -24,6 +25,11 @@ void builtin(char *args[])
 		}
 
 		closedir(dir);
+	}
+	if else (strcmp(args[1], "exit") == 0)
+	{
+		printf("Exit shell..");
+		exit(0);
 	}
 	else
 	{
