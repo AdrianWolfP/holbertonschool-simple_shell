@@ -13,12 +13,12 @@
 
 void comandex(char *args[])
 {
-	pid_t pid = fork(); //create child process
-	int stat; //child status
-	extern char **environ; //variable for environment
-	char *command_path; //command path
+	pid_t pid = fork(); /*create child process*/
+	int stat; /*child status*/
+	extern char **environ; /*variable for environment*/
+	char *command_path; /*command path*/
 
-	command_path = get_path(args[0]); //get the command path
+	command_path = get_path(args[0]); /*get the command path*/
 	if (command_path  == NULL)
 	{
 		printf("Error, %s", args[0]);
@@ -26,23 +26,23 @@ void comandex(char *args[])
 	}
 	if (pid == -1)
 	{
-		perror("fork"); //error while forking
+		perror("fork"); /*error while forking*/
 		exit(EXIT_FAILURE);
 	}
 	else if (pid == 0)
 	{
-		execve(command_path, args, environ); //execute command
-		perror("execve"); //error while executing command
+		execve(command_path, args, environ); /*execute command*/
+		perror("execve"); /*error while executing command*/
 		exit(0);
 	
 	}
-	else //parent process
+	else /*parent process*/
 	{
 		if (wait(&stat) == -1)
 		{
-			perror("wait"); //error while waiting
+			perror("wait"); /*error while waiting*/
 			exit(EXIT_FAILURE);
 		}
 	}
-	free(command_path); //free memory
+	free(command_path); /*free memory*/
 }
