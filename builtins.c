@@ -12,17 +12,18 @@
 
 void builtin(char *args[])
 {
-	DIR *dir = opendir(".");
+	DIR *dir;
 	struct dirent *start;
 	int x;
 
 	if (args[1] == NULL)
 	{
+		dir = opendir(".");
 		if (dir == NULL)
 			return;
 		while ((start = readdir(dir)) != NULL)
 		{
-			printf("%s", start->d_name);
+			printf("%s\n", start->d_name);
 		}
 
 		closedir(dir);
@@ -36,8 +37,9 @@ void builtin(char *args[])
 	{
 		while (args[x] != NULL)
 		{
-			printf("%s", args[x]);
+			printf("%s ", args[x]);
 			x++;
 		}
+		printf("\n");
 	}
 }
