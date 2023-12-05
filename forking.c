@@ -21,7 +21,7 @@ void comandex(char *args[])
 	command_path = get_path(args[0]); /*get the command path*/
 	if (command_path  == NULL)
 	{
-		printf("Error, %s", args[0]);
+		printf("Error, %s\n", args[0]);
 		return;
 	}
 	if (pid == -1)
@@ -32,7 +32,7 @@ void comandex(char *args[])
 	else if (pid == 0)
 	{
 		execve(command_path, args, environ); /*execute command*/
-		perror("execve"); /*error while executing command*/
+		perror("command_path"); /*error while executing command*/
 		exit(0);
 	
 	}
