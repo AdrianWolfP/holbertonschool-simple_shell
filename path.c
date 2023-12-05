@@ -24,14 +24,15 @@ char *get_path(char *command)
 	tok = strtok(path_copy, ":"); /*tokenize with :*/
 	while (tok != NULL)
 	{
-		full_path = calloc(strlen(tok) + strlen(command) + 3, sizeof(char));
+		full_path = calloc(strlen(tok) + strlen(command) + 2, sizeof(char));
 		if (full_path == NULL)
 		{
 			free(path_copy);
 			return(NULL);
 		}
 		strcpy(full_path, tok); /*copy tok to path*/
-		strcat(full_path, "/"); /*add / to path*/
+		if (tok[strlen(tok) - 1] != '/')
+			strcat(full_path, "/"); /*add / to path*/
 		strcat(full_path, command); /*add command to path*/
 
 		if (access(full_path, X_OK) == 0) /*check if path is executable*/
