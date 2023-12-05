@@ -1,11 +1,36 @@
-.TH Name "November 2023" "Simple Shell Manual" 
+.TH SIMPLE_SHELL "1" "November 27, 2023" "Simple Shell Man Page" 
 
-.SH Simple Shell
+.SH NAME
+.B hsh \- Simple shell implementation of command line - Holberton School Project
 
-.SH SYNOPSIS
+.SH SYNOPSIS: The Simple Shell is an entry level command line interperter, UNIX Shell, based on Ken Thompson Thompson shell.
 
 
 .SH DESCRIPTION
+.B hsh is a command language interpreter that shell executes commands read from the command line string, standard input, or specified files.
+
+.SH OVERVIEW
+
+.B Shell is a program that reads input, interprets the line, and executes the command. Works in both interactvie and non-interactive mode.
+
+.SH DIRECTIONS
+
+.B INTERACTIVE MODE
+.PP
+To run hsh in interactive mode follow these directions below:
+.P
+1.First complie all of the .c files in the repository by typing
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.P
+.RE
+2.Now you can enter the interactive mode by typeing the following in the terminal.
+.RS
+.B $ ./hsh
+.P
+.RE
+3.When executed properly, a proment "$" will appear in the terminal line waiting for a command line input.
 
 .SS Options
 

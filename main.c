@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/types.h>
 #include "headers.h"
 
 void builtin(char *args[]);
@@ -36,7 +37,7 @@ int main(void)
 			x = 0; /*reset counter*/
 			token = strtok(buffer, delims); /*tokenize input*/
 			
-			/*looping through tokens and storing in array*/
+			/*looping through tokens and storing in array*
 			while (token != NULL && x < 9)
 			{
 				args[x] = token;
