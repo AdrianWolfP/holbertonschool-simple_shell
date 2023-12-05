@@ -32,7 +32,7 @@ char *get_path(char *command)
 
 		if (access(full_path, X_OK) == 0) /*check if path is executable*/
 		{
-			return (strdup full_path); /*return path if it is*/
+			return (strdup(full_path)); /*return path if it is*/
 		}
 
 
