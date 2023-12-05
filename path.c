@@ -24,9 +24,10 @@ char *get_path(char *command)
 	tok = strtok(path_copy, ":"); /*tokenize with :*/
 	while (tok != NULL)
 	{
-		full_path = malloc(strlen(tok) + strlen(command) + 3);
+		full_path = calloc(strlen(tok) + strlen(command) + 3, sizeof(char));
 		if (full_path == NULL)
 		{
+			free(path_copy);
 			return(NULL);
 		}
 		strcpy(full_path, tok); /*copy tok to path*/
@@ -35,8 +36,7 @@ char *get_path(char *command)
 
 		if (access(full_path, X_OK) == 0) /*check if path is executable*/
 		{
-			free(full_path);
-			return(full_path); /*return path if it is*/
+			return strdup(full_path); /*return path if it is*/
 		}
 
 
