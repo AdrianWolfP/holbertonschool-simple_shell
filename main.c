@@ -19,6 +19,7 @@ int main(void)
 	char *buffer = NULL; /*pointer for input*/
 	size_t buffsize = 1024; /*size of input buff*/
 	ssize_t ch; /*num of char read by getline*/
+	char *args[2];
 
 	/*allocate mem for input buff*/
 	buffer = malloc(buffsize * sizeof(char));
@@ -32,10 +33,18 @@ int main(void)
 		/*break loop with Ctrl-D*/
 		if (ch == -1)
 		{
-			exitshell();
-			break;
+			if (feof(stdin))
+			{
+				printf("\n");
+				exitshell();
+				break;
+			}
+			else
+				exit(EXIT_FAILURE);
 		}
-		token(NULL);
+		args[0] = buffer;
+		args[1] = NULL;
+		token(args);
 	}
 	free(buffer);
 	return (0);
@@ -48,6 +57,6 @@ void exitshell(void)
 {
 
 	printf("Exiting shell..\n");
-	exit(0);
+	exit(EXIT_SUCCESS);
 
 }
