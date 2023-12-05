@@ -30,3 +30,19 @@ Directory of our <a href="https://github.com/Srixx24/holbertonschool-simple_shel
 ### 🐚 [builtin.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/builtins.c)
 -
 -
+
+### 🐚 [env.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/env.c)
+-
+-
+
+### 🐚 [exit.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/exit.c)
+-
+-
+
+### 🐚 [ls.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/ls.c)
+-
+-
+
+### 🐚 [headers.h](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/headers.h)
+-
+-
