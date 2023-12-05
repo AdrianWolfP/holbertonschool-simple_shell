@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "headers.h"
 
+/**
+ * printenv - Print the enviornment from the command line
+ *
+ * Return: printed out list of the path
+ */
 void printenv(void)
 {
 	extern char **environ;

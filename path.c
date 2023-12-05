@@ -19,7 +19,7 @@ char *get_path(char *command)
 	char *tok; /*token for path*/
 
 	if (path == NULL || path_copy == NULL)
-		return(NULL);
+		return (NULL);
 
 	tok = strtok(path_copy, ":"); /*tokenize with :*/
 	while (tok != NULL)
@@ -28,7 +28,7 @@ char *get_path(char *command)
 		if (full_path == NULL)
 		{
 			free(path_copy);
-			return(NULL);
+			return (NULL);
 		}
 		strcpy(full_path, tok); /*copy tok to path*/
 		if (tok[strlen(tok) - 1] != '/')
@@ -37,13 +37,13 @@ char *get_path(char *command)
 
 		if (access(full_path, X_OK) == 0) /*check if path is executable*/
 		{
-			return strdup(full_path); /*return path if it is*/
+			return (strdup full_path); /*return path if it is*/
 		}
 
 
-		free(full_path); 
+		free(full_path);
 		tok = strtok(NULL, ":"); /*move to next token*/
 	}
 	free(path_copy);
-	return(NULL);
+	return (NULL);
 }

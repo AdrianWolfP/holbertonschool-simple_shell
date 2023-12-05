@@ -4,7 +4,7 @@
 #include <string.h>
 #include "headers.h"
 /**
- * builtin: handling built in commands
+ * builtin - handling built in commands
  *
  * @args: arguments
  *

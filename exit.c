@@ -3,7 +3,11 @@
 #include <dirent.h>
 #include <string.h>
 #include "headers.h"
-
+/**
+ * exitshell - the function that will exit out of the shell
+ *
+ *Return: -1 for exit, otherwise ERROR
+ */
 void exitshell(char *args[])
 {
 	if (strcmp(args[0], "exit") == 0)

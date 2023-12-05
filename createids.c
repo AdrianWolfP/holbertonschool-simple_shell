@@ -4,8 +4,7 @@
 #include <unistd.h>
 #include "headers.h"
 /**
- * main - creates child processes and prints the PID for each
- * printpids - Gets the awenser from child and prints it out to the parent
+ * printpids -  Gets the awenser from child and prints it out to the parent
  * Return: Always 0
  */
 
