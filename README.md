@@ -16,12 +16,12 @@ Directory of our <a href="https://github.com/Srixx24/holbertonschool-simple_shel
 <br>
 
 ### 🐚 [main.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/main.c)
--
--
+- Gives a command prompt of $ and waits for command from user in an infinite loop.
+- Has an exit command of ctrl-D
 
 ### 🐚 [commandex.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/commandex.c)
--
--
+- Program handles command execution with parent/child process
+- Pulls path environment from path.c with get_path 
 
 ### 🐚 [path.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/path.c)
 -
