@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/types.h>
 #include "headers.h"
 
 void builtin(char *args[]);
@@ -15,7 +16,6 @@ void builtin(char *args[]);
 int main(void)
 {
 	char *buffer = NULL, *args[10];
-	size_t buffsize = 1024;
 	ssize_t ch;
 	char *token;
 	char delims[] = " :/";
@@ -26,14 +26,15 @@ int main(void)
 		printf("\n$ ");
 
 		ch = getline(&buffer, &size, stdin);
-		if (ch == -1)
+
+		if (ch == -1 || feof(stdin) != 0)
 			break;
 
 		if (ch > 1)
 		{
 			x = 0;
 			token = strtok(buffer, delims);
-
+		
 			while (token != NULL && x < 9)
 			{
 				args[x] = token;
