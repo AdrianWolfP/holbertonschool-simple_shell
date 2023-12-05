@@ -4,8 +4,6 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include "headers.h"
-
-void builtin(char *args[]);
 /**
  * main - gives command line with prompt $ and reads imput
  * from user infinitely until user presses ctr-d
@@ -21,13 +19,12 @@ int main(void)
 	char *token;
 	char delims[] = " :/"; /*delimiters*/
 	int x;
-
 	/*allocate mem for input buff*/
 	buffer = malloc(buffsize * sizeof(char));
 	while (1) /*start of infinite loop*/
 	{
 		/*prompt*/
-		printf("\n$ ");
+		printf("$ ");
 		/*reading input with getline*/
 		ch = getline(&buffer, &buffsize, stdin);
 		/*break loop with Ctrl-D*/
@@ -40,7 +37,6 @@ int main(void)
 			x = 0;
 			/*tokenize input*/
 			token = strtok(buffer, delims);
-
 			/*looping through tokens and storing in array*/
 			while (token != NULL && x < 9)
 			{
@@ -50,10 +46,22 @@ int main(void)
 			}
 			/*end of array with null*/
 			args[x] = NULL;
+			if (strcmp(args[0], "exit") == 0)
+			{
+				exitshell(0);
+				break;
+			}
+			else if (strcmp(args[0], "env") == 0)
+			{
+				printenv();
+			}
+			else
+			{
 			/*calling comandex function*/
 			comandex(args);
-			/*calling builtin fucntion*/
-			builtin(args);
+			/*calling list function*/
+			listfiles(args);
+			}
 		}
 	}
 	/*free memory*/

@@ -19,7 +19,7 @@ void comandex(char *args[])
 	char *command_path; /*command path*/
 
 	command_path = get_path(args[0]); /*get the command path*/
-	if (command_path  == NULL)
+	if (command_path == NULL)
 	{
 		printf("Error, %s\n", args[0]);
 		return;
