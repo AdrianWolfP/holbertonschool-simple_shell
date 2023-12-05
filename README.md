@@ -14,4 +14,18 @@ Directory of our <a href="https://github.com/Srixx24/holbertonschool-simple_shel
 </p></h3>
 
 <br>
-this is Shell in C
+### 🐚 [main.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/main.c)
+-
+-
+
+### 🐚 [commandex.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/commandex.c)
+-
+-
+
+### 🐚 [path.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/path.c)
+-
+-
+
+### 🐚 [builtin.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/builtins.c)
+-
+-
