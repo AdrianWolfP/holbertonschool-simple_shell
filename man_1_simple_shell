@@ -1,15 +1,91 @@
-.TH Name "November 2023" "Simple Shell Manual" 
+.TH SIMPLE_SHELL "1" "November 27, 2023" "Simple Shell Man Page" 
 
-.SH Simple Shell
+.SH NAME
+.B hsh \- Simple shell implementation of command line - Holberton School Project
 
-.SH SYNOPSIS
+.SH SYNOPSIS: The Simple Shell is an entry level command line interperter, UNIX Shell, based on Ken Thompson Thompson shell.
 
 
 .SH DESCRIPTION
+.B hsh is a command language interpreter that shell executes commands read from the command line string, standard input, or specified files.
 
-.SS Options
+.SH OVERVIEW
 
-.SH FILES
+.B Shell is a program that reads input, interprets the line, and executes the command. Works in both interactvie and non-interactive mode.
+
+.SH DIRECTIONS
+
+.B INTERACTIVE MODE
+.PP
+To run hsh in interactive mode follow these directions below:
+.P
+1.First complie all of the .c files in the repository by typing
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.P
+.RE
+2.Now you can enter the interactive mode by typeing the following in the terminal.
+.RS
+.B $ ./hsh
+.P
+.RE
+3.When executed properly, a proment "$" will appear in the terminal line waiting for a command line input.
+
+.B NON INTERACTIVE MODE
+.PP
+To run hsh in non-interactive mode, follow the direrctions below:
+.P
+1.First compile all of the .c files in the repository bt typing
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.P
+.RE
+2.Now you can enter the non-interactive mode by typing in the terminal
+.RS
+.B $ echo "bin/ls" | ./hsh
+
+.SH BUILTINS
+.RS Information about the Builtin commands for hsh.
+.B exit
+.B - The hsh shell process is terminated
+
+.B env
+.B - Prints all the enviromental variables.
+
+.B ls
+.B - Lists all the files in the currently working directory.
+
+.B cd
+.B - Change directory
+
+.SH OPTIONS
+Options are currently unavailable
+
+.SH SEE ALSO
+.RE
+.B Command Search and Execution
+.RE
+sh(1), cd(1p), echo(1p), exit(1p)
+
+.RE
+.B System Interfaces volume
+.RE
+exit(2p), fork(3p), open(3p), execve(2).
+
+.SH EXIT STATUS
+.B 0 - Properly executed
+.PP
+.B 1 - Error
+
+.Sh OUTPUT FILES
+.RE
+.B None.
+
+.SH BUGS
+Now bugs that we encountered was a non stop printing of the command prompet "$" and the environment path printing out most of the directories with "binbin". Please reach out to either of the authors of bugs.
 
 .SH AUTHORS
-Wolfgang P & Jackie L
+.B Jackie L <7214@holbertonstudents.com>
+.B Wolfgang P <6130@holbertonstudents.com>

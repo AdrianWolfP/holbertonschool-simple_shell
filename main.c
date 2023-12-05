@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/types.h>
 #include "headers.h"
 
 void builtin(char *args[]);
@@ -25,17 +26,21 @@ int main(void)
 	buffer = malloc(buffsize * sizeof(char));
 	while (1) /*start of infinite loop*/
 	{
-		printf("\n$ "); /*prompt*/
+		/*prompt*/
+		printf("\n$ ");
 		/*reading input with getline*/
 		ch = getline(&buffer, &buffsize, stdin);
-		if (ch == -1) /*break loop with Ctrl-D*/
+		/*break loop with Ctrl-D*/
+		if (ch == -1)
 			break;
 
 		if (ch > 1)
 		{
-			x = 0; /*reset counter*/
-			token = strtok(buffer, delims); /*tokenize input*/
-			
+			/*reset counter*/
+			x = 0;
+			/*tokenize input*/
+			token = strtok(buffer, delims);
+
 			/*looping through tokens and storing in array*/
 			while (token != NULL && x < 9)
 			{
@@ -43,13 +48,15 @@ int main(void)
 				token = strtok(NULL, delims);
 				x++;
 			}
-
+			/*end of array with null*/
 			args[x] = NULL;
-
-		 	comandex(args); /* calling comandex function */
-			builtin(args); /* calling builtin function */
+			/*calling comandex function*/
+			comandex(args);
+			/*calling builtin fucntion*/
+			builtin(args);
 		}
 	}
-	free(buffer); /*free memory*/
+	/*free memory*/
+	free(buffer);
 	return (0);
 }
