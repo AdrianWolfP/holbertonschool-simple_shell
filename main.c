@@ -24,7 +24,7 @@ int main(void)
 	while (1) /*start of infinite loop*/
 	{
 		/*prompt*/
-		printf("\n$ ");
+		printf("$ ");
 		/*reading input with getline*/
 		ch = getline(&buffer, &buffsize, stdin);
 		/*break loop with Ctrl-D*/
@@ -51,10 +51,17 @@ int main(void)
 				exitshell(0);
 				break;
 			}
+			else if (strcmp(args[0], "env") == 0)
+			{
+				printenv();
+			}
+			else
+			{
 			/*calling comandex function*/
 			comandex(args);
 			/*calling list function*/
 			listfiles(args);
+			}
 		}
 	}
 	/*free memory*/

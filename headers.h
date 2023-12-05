@@ -15,4 +15,6 @@ void listfiles(char *args[]);
 
 void builtin(char *args[]);
 
+void printenv(void);
+
 #endif
