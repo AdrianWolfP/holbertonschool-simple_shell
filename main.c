@@ -17,7 +17,7 @@ int main(void)
 	char *buffer = NULL, *args[10]; /*pointer for input, array for token arg*/
 	size_t buffsize = 1024; /*size of input buff*/
 	ssize_t ch; /*num of char read by getline*/
-	char *tok; /*pointer for tokens*/
+	char *token; /*pointer for tokens*/
 	char delims[] = " :/"; /*delimiters*/
 	int x; /*counter variable*/
 
@@ -44,7 +44,7 @@ int main(void)
 				x++;
 			}
 
-			args[x] = NULL; /*end array with null*/
+			args[x] = NULL; /* end array with null */
 
 			comandex(args); /*calling comandex function*/
 			builtin(args); /*calling builtin function*/
