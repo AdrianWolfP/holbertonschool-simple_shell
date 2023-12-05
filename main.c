@@ -45,7 +45,7 @@ int main(void)
 				x++;
 			}
 
-			args[x] = NULL; /* end array with null */
+			args[x] = NULL;
 
 			comandex(args); /*calling comandex function*/
 			builtin(args); /*calling builtin function*/
