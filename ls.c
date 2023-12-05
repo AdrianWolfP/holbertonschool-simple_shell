@@ -4,7 +4,7 @@
 #include <string.h>
 #include "headers.h"
 
-void list_files(void)
+void listfiles(char *args[])
 {
 	DIR *dir; /*directory stream*/
 	struct dirent *start; /*entry for directory structure*/

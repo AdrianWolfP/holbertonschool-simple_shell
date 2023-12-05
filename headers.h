@@ -9,9 +9,9 @@ void printpids();
 
 char *get_path(char *command);
 
-void exit_shell(void);
+void exitshell(char *args[]);
 
-void list_files(void);
+void listfiles(char *args[]);
 
 void builtin(char *args[]);
 

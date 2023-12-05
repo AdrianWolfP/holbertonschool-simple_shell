@@ -48,13 +48,13 @@ int main(void)
 			args[x] = NULL;
 			if (strcmp(args[0], "exit") == 0)
 			{
-				exit_shell();
+				exitshell(0);
 				break;
 			}
 			/*calling comandex function*/
 			comandex(args);
 			/*calling list function*/
-			list_files(args);
+			listfiles(args);
 		}
 	}
 	/*free memory*/
