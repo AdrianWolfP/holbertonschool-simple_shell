@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <dirent.h>
 #include <sys/types.h>
 #include "headers.h"
 /**
@@ -10,15 +11,14 @@
  *
  * Return: 0 on successful execution
  */
+void token(char *arg[]);
 
 int main(void)
 {
-	char *buffer = NULL, *args[10]; /*pointer for input, array for token arg*/
+	char *buffer = NULL; /*pointer for input*/
 	size_t buffsize = 1024; /*size of input buff*/
 	ssize_t ch; /*num of char read by getline*/
-	char *token;
-	char delims[] = " :/"; /*delimiters*/
-	int x;
+
 	/*allocate mem for input buff*/
 	buffer = malloc(buffsize * sizeof(char));
 
@@ -30,6 +30,23 @@ int main(void)
 		ch = getline(&buffer, &buffsize, stdin);
 		/*break loop with Ctrl-D*/
 		if (ch == -1)
+		{
+			exitshell(1);
 			break;
+		}
+		tokenizing(1);
+	}
+	return (0);
+}
+/**
+ * exitshell - the function that will exit out of the shell
+ * @arg: argument 
+ */
+void exitshell(char *args[])
+{
+	if (strcmp(args[0], "exit") == 0)
+	{
+		printf("Exiting shell..\n");
+		exit(0);
 	}
 }

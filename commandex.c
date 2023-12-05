@@ -15,7 +15,7 @@ void comandex(char *args[])
 {
 	pid_t pid = fork(); /*create child process*/
 	int stat; /*child status*/
-	extren char **environ;
+	extern char **environ;
 	char *command_path; /*command path*/
 
 	command_path = get_path(args[0]); /*get the command path*/
