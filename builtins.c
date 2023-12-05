@@ -33,7 +33,7 @@ void builtin(char *args[])
 	else if (strcmp(args[1], "exit") == 0)
 	{
 		/*exit command*/
-		printf("Exit shell..");
+		printf("Exit shell..\n");
 		exit(0);
 	}
 	else
