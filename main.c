@@ -21,7 +21,7 @@ int main(void)
 	char delims[] = " :/";
 	int x;
 
-	buffer = malloc(buffersize * sizeof(char));
+	buffer = malloc(buffsize * sizeof(char));
 	while (1)
 	{
 		printf("\n$ ");
