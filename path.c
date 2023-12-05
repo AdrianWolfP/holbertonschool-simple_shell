@@ -45,5 +45,5 @@ char *get_path(char *command)
 		tok = strtok(NULL, ":"); /*move to next token*/
 	}
 	free(path_copy);
-	return(NULL);
+	return(path);
 }
