@@ -12,6 +12,7 @@
  * Return: 0 on successful execution
  */
 void token(char *arg[]);
+void exitshell(void);
 
 int main(void)
 {
@@ -31,22 +32,22 @@ int main(void)
 		/*break loop with Ctrl-D*/
 		if (ch == -1)
 		{
-			exitshell(1);
+			exitshell();
 			break;
 		}
-		tokenizing(1);
+		token(NULL);
 	}
+	free(buffer);
 	return (0);
 }
 /**
  * exitshell - the function that will exit out of the shell
  * @arg: argument 
  */
-void exitshell(char *args[])
+void exitshell(void)
 {
-	if (strcmp(args[0], "exit") == 0)
-	{
-		printf("Exiting shell..\n");
-		exit(0);
-	}
+
+	printf("Exiting shell..\n");
+	exit(0);
+
 }
