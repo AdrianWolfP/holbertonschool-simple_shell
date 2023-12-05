@@ -46,3 +46,7 @@ Directory of our <a href="https://github.com/Srixx24/holbertonschool-simple_shel
 <li><a href="https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/AUTHORS/">AUTHORS</a></li>
 <li><a href="https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/man_1_simple_shell/">MAN Page</a></li>
 </details>
+
+
+![jamaica-conch-shell-on-beach-tetra-images](https://github.com/Srixx24/holbertonschool-simple_shell/assets/144152489/92341cd5-3dc1-4d27-89a5-9c661aebe08a)
+
