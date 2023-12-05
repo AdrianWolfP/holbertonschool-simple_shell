@@ -4,7 +4,7 @@
 #include <string.h>
 #include "headers.h"
 /**
- * builtin: checking
+ * builtin: handling built in commands
  *
  * @args: arguments
  *
@@ -12,17 +12,19 @@
 
 void builtin(char *args[])
 {
-	DIR *dir;
-	struct dirent *start;
-	int x;
+	DIR *dir; //directory stream
+	struct dirent *start; //entry for directory structure
+	int x = 0; //counter
 
 	if (args[1] == NULL)
 	{
+		//lists files in current directory
 		dir = opendir(".");
 		if (dir == NULL)
 			return;
 		while ((start = readdir(dir)) != NULL)
 		{
+			//prints all files in directory
 			printf("%s\n", start->d_name);
 		}
 
@@ -30,11 +32,13 @@ void builtin(char *args[])
 	}
 	else if (strcmp(args[1], "exit") == 0)
 	{
+		//exit command
 		printf("Exit shell..");
 		exit(0);
 	}
 	else
 	{
+		//prints given arg
 		while (args[x] != NULL)
 		{
 			printf("%s ", args[x]);
