@@ -32,6 +32,7 @@ void comandex(char *args[])
 	else if (pid == 0)
 	{
 		execve(command_path, args, environ);
+		perror("execve");
 		exit(0);
 	
 	}
