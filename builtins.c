@@ -6,7 +6,7 @@
 /**
  * builtin: checking
  *
- * @args: arguments 
+ * @args: arguments
  *
  */
 
@@ -20,7 +20,7 @@ void builtin(char *args[])
 	{
 		if (dir == NULL)
 			return;
-		while((start = readdir(dir)) != NULL)
+		while ((start = readdir(dir)) != NULL)
 		{
 			printf("%s", start->d_name);
 		}
