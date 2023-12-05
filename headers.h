@@ -18,9 +18,9 @@ void printpids();
 
 char *get_path(char *command);
 
-void exitshell(char *args[]);
+void exitshell(void);
 
-void token(char *arg[]);
+void token(char *args[]);
 
 void listfiles(char *args[]);
 

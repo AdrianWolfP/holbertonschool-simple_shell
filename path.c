@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include "headers.h"
 /**
  * get_path - function searching enviorment list to find the
@@ -17,6 +19,7 @@ char *get_path(char *command)
 	char *path_copy = strdup(path); /*copy path for tokenize*/
 	char *full_path = NULL; /*full path command*/
 	char *tok; /*token for path*/
+	struct stat st;
 
 	if (path == NULL || path_copy == NULL)
 		return (NULL);
@@ -30,8 +33,10 @@ char *get_path(char *command)
 		strcat(full_path,  "/");
 		strcat(full_path, command); /*add command to path*/
 
-		if (access(full_path, X_OK) == 0) /*check if path is executable*/
+		/*check if path is executable*/
+		if (stat(full_path, &st) == 0 && S_ISREG(st.st_mode) && (st.st_mode & S_IXUSR))
 		{
+			free(path_copy);
 			return (strdup(full_path)); /*return path if it is*/
 		}
 
