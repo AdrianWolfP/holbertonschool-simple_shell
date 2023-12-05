@@ -18,9 +18,9 @@ int main(void)
 	char *buffer = NULL, *args[10]; /*pointer for input, array for token arg*/
 	size_t buffsize = 1024; /*size of input buff*/
 	ssize_t ch; /*num of char read by getline*/
-	char *token; /*pointer for tokens*/
+	char *token;
 	char delims[] = " :/"; /*delimiters*/
-	int x; /*counter variable*/
+	int x;
 
 	/*allocate mem for input buff*/
 	buffer = malloc(buffsize * sizeof(char));
@@ -47,8 +47,8 @@ int main(void)
 
 			args[x] = NULL;
 
-			comandex(args); /*calling comandex function*/
-			builtin(args); /*calling builtin function*/
+		 	comandex(args); /* calling comandex function */
+			builtin(args); /* calling builtin function */
 		}
 	}
 	free(buffer); /*free memory*/
