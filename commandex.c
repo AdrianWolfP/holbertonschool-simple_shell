@@ -6,16 +6,16 @@
 #include "headers.h"
 
 /*
- * commandex: command execution for parent/child process
+ * comandex - command execution for parent/child process
  *
  * @args: argument strings
+ * Return: from the child
  */
-
 void comandex(char *args[])
 {
 	pid_t pid = fork(); /*create child process*/
 	int stat; /*child status*/
-	extern char **environ; /*variable for environment*/
+	extren char **environ;
 	char *command_path; /*command path*/
 
 	command_path = get_path(args[0]); /*get the command path*/
@@ -34,7 +34,7 @@ void comandex(char *args[])
 		execve(command_path, args, environ); /*execute command*/
 		perror("command_path"); /*error while executing command*/
 		exit(0);
-	
+
 	}
 	else /*parent process*/
 	{
