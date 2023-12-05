@@ -4,9 +4,9 @@
 #include <string.h>
 #include "headers.h"
 
-void exit_shell(void)
+void exitshell(char *args[])
 {
-	if (strcmp(args[1], "exit") == 0)
+	if (strcmp(args[0], "exit") == 0)
 	{
 		printf("Exiting shell..\n");
 		exit(0);
