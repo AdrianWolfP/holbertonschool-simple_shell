@@ -1,14 +1,19 @@
 #include "headers.h"
+/**
+ * main - gives command line with prompt $ and reads imput
+ * from user infinitely until user presses ctr-d
+ *@arg: argument
+ * Return: 0 on successful execution
+ */
 void token(char *arg[]);
 void exitshell(void);
 void builtins(char *buffer);
 
 int main(void)
 {
-	char *buffer = NULL;           /* pointer for input */
-	size_t buffsize = 1024;        /* size of input buff */
-	ssize_t ch;                    /* num of char read by getline */
-	char *args[2];                 /* stores token input */
+	char *buffer = NULL; /* pointer for input */
+	size_t buffsize = 1024; /* size of input buff */
+	ssize_t ch; /* num of char read by getline */
 
 	/* allocate mem for input buff */
 	buffer = malloc(buffsize * sizeof(char));
@@ -25,15 +30,15 @@ int main(void)
 	{
 		if (feof(stdin))
 		{
-		printf("\n");
-		exitshell();
-		break;
+			printf("\n");
+			exitshell();
+			break;
 		}
 	}
 	else
 	{
 		exit(EXIT_FAILURE);
-
+	}
 	/* Remove newline character from input */
 	buffer[strcspn(buffer, "\n")] = '\0';
 	builtins(buffer); /* check built-in command */
@@ -46,9 +51,8 @@ int main(void)
 /**
  * builtins - checking for built-in commands and going to commandex
  */
-void builtins(void)
+void builtins(char *buffer)
 {
-	char buffer[1024];
 	char *args[3];
 	char **env = environ;
 
@@ -58,16 +62,16 @@ void builtins(void)
 	}
 	else if (strcmp(buffer, "env") == 0)
 	{
-	while (*env != NULL)
-	{
-		printf("%s\n", *env);
-		env++;
-		
+		while (*env != NULL)
+		{
+			printf("%s\n", *env);
+			env++;
+		}
 	}
 	else
 	{
-	args[0] = buffer;
-	args[1] = NULL;
-	comandex(args, buffer);
+		args[0] = buffer;
+		args[1] = NULL;
+		comandex(args, buffer);
 	}
 }
