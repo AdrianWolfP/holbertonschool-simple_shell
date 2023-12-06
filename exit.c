@@ -5,7 +5,7 @@
 #include "headers.h"
 /**
  * exitshell - the function that will exit out of the shell
- *
+ * @args: amount of arguments
  *Return: -1 for exit, otherwise ERROR
  */
 void exitshell(char *args[])

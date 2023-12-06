@@ -6,7 +6,7 @@
 #include "headers.h"
 
 /*
- * comandex - command execution for parent/child process
+ * void comandex(char *args[]) - command execution for parent/child process
  *
  * @args: argument strings
  * Return: from the child
@@ -15,6 +15,7 @@ void comandex(char *args[])
 {
 	pid_t pid = fork(); /*create child process*/
 	int stat; /*child status*/
+
 	extren char **environ;
 	char *command_path; /*command path*/
 

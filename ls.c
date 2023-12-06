@@ -3,7 +3,13 @@
 #include <dirent.h>
 #include <string.h>
 #include "headers.h"
-
+/**
+ * listfiles - listing out the directory onto the shell
+ * struct dirent - the entry for directory struct
+ * 
+ * args: amount of arguments
+ * Return: printed out list of dirctoreis to the path
+ */
 void listfiles(char *args[])
 {
 	DIR *dir; /*directory stream*/
