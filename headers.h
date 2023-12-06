@@ -12,7 +12,7 @@ int main(void);
 
 extern char **environ;
 
-void comandex(char *arg[]);
+void comandex(char *args[], char *command);
 
 char *get_path(char *command);
 
@@ -20,6 +20,6 @@ void exitshell(void);
 
 void token(char *args[]);
 
-void printenv(void);
+void builtins(char *buffer);
 
 #endif
