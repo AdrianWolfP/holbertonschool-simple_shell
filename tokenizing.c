@@ -9,24 +9,30 @@ void comandex(char *arg[]);
 void token(char *args[])
 {
 	char *token;
-	char delims[] = " :/"; /*delimiters*/
+	char delims[] = " \t:/\n"; /*delimiters*/
 	int x = 0;
+	int i;
+	char **toka = malloc(10 * sizeof(char *));
 
 	/*tokenize input*/
 	token = strtok(args[0], delims);
 	/*looping through tokens and storing in array*/
 	while (token != NULL && x < 9)
 	{
-		args[x] = token;
+		toka[x] = strdup(token);
 		token = strtok(NULL, delims);
 		x++;
 	}
 	/*end of array with null*/
-	args[x] = NULL;
+	toka[x] = NULL;
 
-	if (strcmp(args[0], "env") == 0)
+	if (strcmp(toka[0], "env") == 0)
 		printenv();
 	else
 	/*calling comandex function*/
-		comandex(args);
+		comandex(toka);
+	for (i = 0; i < x; i++)
+		free(toka[i]);
+
+	free(toka);
 }

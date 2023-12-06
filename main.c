@@ -1,9 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <dirent.h>
-#include <sys/types.h>
 #include "headers.h"
 /**
  * main - gives command line with prompt $ and reads imput
@@ -42,6 +36,11 @@ int main(void)
 			else
 				exit(EXIT_FAILURE);
 		}
+		/* Remove newline character from input */
+		buffer[strcspn(buffer, "\n")] = '\0';
+		if (buffer[0] == '\0')
+			continue;
+		/* Convert the buffer into an array of pointers */
 		args[0] = buffer;
 		args[1] = NULL;
 		token(args);
