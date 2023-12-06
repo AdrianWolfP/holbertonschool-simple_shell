@@ -4,7 +4,7 @@
  * passed to through
  * @arg: argument string
  */
-void comandex(char *arg[]);
+void comandex(char *args[], char *command);
 
 void token(char *args[])
 {
@@ -26,11 +26,9 @@ void token(char *args[])
 	/*end of array with null*/
 	toka[x] = NULL;
 
-	if (strcmp(toka[0], "env") == 0)
-		printenv();
-	else
+
 	/*calling comandex function*/
-		comandex(toka);
+		comandex(args, toka[0]);
 	for (i = 0; i < x; i++)
 		free(toka[i]);
 
