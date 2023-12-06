@@ -43,7 +43,6 @@ int main(void)
 	buffer[strcspn(buffer, "\n")] = '\0';
 	builtins(buffer); /* check built-in command */
         /* Convert the buffer into an array of pointers */
-        token(args);
 	}
 	free(buffer);
 	return (0);
