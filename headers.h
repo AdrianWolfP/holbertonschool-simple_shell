@@ -16,8 +16,6 @@ void comandex(char *args[], char *command);
 
 char *get_path(char *command);
 
-void exitshell(void);
-
 void token(char *args[]);
 
 void builtins(char *buffer);

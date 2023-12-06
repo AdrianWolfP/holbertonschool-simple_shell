@@ -2,11 +2,9 @@
 /**
  * main - gives command line with prompt $ and reads imput
  * from user infinitely until user presses ctr-d
- *@arg: argument
  * Return: 0 on successful execution
  */
 void token(char *arg[]);
-void exitshell(void);
 void builtins(char *buffer);
 
 int main(void)
@@ -31,26 +29,19 @@ int main(void)
 		if (feof(stdin))
 		{
 			printf("\n");
-			exitshell();
+			exit(EXIT_SUCCESS);
 			break;
 		}
+		else
+			exit(EXIT_FAILURE);
 	}
-	else
-	{
-		exit(EXIT_FAILURE);
-	}
+
 	/* Remove newline character from input */
 	buffer[strcspn(buffer, "\n")] = '\0';
 	builtins(buffer); /* check built-in command */
-        /* Convert the buffer into an array of pointers */
 	}
 	free(buffer);
 	return (0);
-}
-/* exitshell - exits shell */
-void exitshell(void)
-{
-	exit(EXIT_SUCCESS);
 }
 /**
  * builtins - checking for built-in commands and going to commandex
@@ -62,7 +53,7 @@ void builtins(char *buffer)
 
 	if (strcmp(buffer, "exit") == 0)
 	{
-	exit(EXIT_SUCCESS);
+		exit(EXIT_SUCCESS);
 	}
 	else if (strcmp(buffer, "env") == 0)
 	{
