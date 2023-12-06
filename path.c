@@ -33,7 +33,8 @@ char *get_path(char *command)
 		strcat(full_path,  "/");
 		strcat(full_path, command); /*add command to path*/
 		/*check if path is executable*/
-		if (stat(full_path, &st) == 0 && S_ISREG(st.st_mode) && (st.st_mode & S_IXUSR))
+		if (stat(full_path, &st) == 0 &&
+			S_ISREG(st.st_mode) && (st.st_mode & S_IXUSR))
 		{
 			free(path_copy);
 			return (full_path); /*return path if it is*/
