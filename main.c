@@ -2,7 +2,7 @@
 /**
  * main - gives command line with prompt $ and reads imput
  * from user infinitely until user presses ctr-d
- *
+ *@arg: argument
  * Return: 0 on successful execution
  */
 void token(char *arg[]);
@@ -48,7 +48,9 @@ int main(void)
 	free(buffer);
 	return (0);
 }
-/*exitshell - the function that will exit out of the shell*/
+/**
+ * exitshell - the function that will exit out of the shell
+ */
 void exitshell(void)
 {
 	exit(EXIT_SUCCESS);

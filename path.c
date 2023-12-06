@@ -3,9 +3,7 @@
 /**
  * get_path - function searching enviorment list to find the
  * env variable name and returns a pointer to value string
- *
  * @command: file being searched for in path
- *
  * Return: NULL or full path
  */
 char *get_path(char *command)
@@ -28,7 +26,7 @@ char *get_path(char *command)
 	while (tok != NULL)
 	{
 		full_path = calloc(strlen(tok) + strlen(command) + 2, sizeof(char));
-    		if (full_path == NULL)
+		if (full_path == NULL)
 		{
 			perror("calloc");
 			free(path_copy);
