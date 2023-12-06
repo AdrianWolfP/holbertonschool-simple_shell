@@ -48,6 +48,11 @@ int main(void)
 	free(buffer);
 	return (0);
 }
+/* exitshell - exits shell */
+void exitshell(void)
+{
+	exit(EXIT_SUCCESS);
+}
 /**
  * builtins - checking for built-in commands and going to commandex
  */
