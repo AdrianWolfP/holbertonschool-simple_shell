@@ -11,7 +11,6 @@ void comandex(char *args[], char *command)
 	pid_t pid = fork(); /*create child process*/
 	int stat; /*child status*/
 	char *command_path = get_path(command); /*get the command path*/
-	
 	if (command_path == NULL)
 	{
 		fprintf(stderr, "Command not found: %s\n", command);
