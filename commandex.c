@@ -1,47 +1,45 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 #include "headers.h"
 
-/*
- * void comandex(char *args[]) - command execution for parent/child process
+/**
+ * comandex - command execution for parent/child process
  *
- * @args: argument strings
+ * @command: command
  * Return: from the child
  */
-void comandex(char *args[])
+void comandex(char *args[], char *command)
 {
 	pid_t pid = fork(); /*create child process*/
 	int stat; /*child status*/
-
-	extren char **environ;
-	char *command_path; /*command path*/
-
-	command_path = get_path(args[0]); /*get the command path*/
+	char *command_path = get_path(command); /*get the command path*/
 	if (command_path == NULL)
 	{
-		printf("Error, %s\n", args[0]);
+		fprintf(stderr, "Command not found: %s\n", command);
 		return;
 	}
+	args[0] = command_path;
+	args[1] = command;
+	args[2] = NULL;
 	if (pid == -1)
 	{
 		perror("fork"); /*error while forking*/
+		free(command_path);
 		exit(EXIT_FAILURE);
 	}
 	else if (pid == 0)
 	{
-		execve(command_path, args, environ); /*execute command*/
-		perror("command_path"); /*error while executing command*/
-		exit(0);
-
+		if (execv(command_path, args) == -1)
+		{
+			perror("Execute fail"); /*error while executing command*/
+			free(command_path);
+			exit(EXIT_FAILURE);
+		}
 	}
 	else /*parent process*/
 	{
-		if (wait(&stat) == -1)
+		if (waitpid(pid, &stat, 0) == -1)
 		{
-			perror("wait"); /*error while waiting*/
+			perror("wait parent"); /*error while waiting*/
+			free(command_path);
 			exit(EXIT_FAILURE);
 		}
 	}

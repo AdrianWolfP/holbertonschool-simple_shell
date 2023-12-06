@@ -12,20 +12,12 @@ int main(void);
 
 extern char **environ;
 
-void comandex(char *arg[]);
-
-void printpids();
+void comandex(char *args[], char *command);
 
 char *get_path(char *command);
 
-void exitshell(char *args[]);
+void token(char *args[]);
 
-void token(char *arg[]);
-
-void listfiles(char *args[]);
-
-void builtin(char *args[]);
-
-void printenv(void);
+void builtins(char *buffer);
 
 #endif
