@@ -2,7 +2,6 @@
 /**
  * main - gives command line with prompt $ and reads imput
  * from user infinitely until user presses ctr-d
- * @arg: argument
  * Return: 0 on successful execution
  */
 void token(char *arg[]);
@@ -13,7 +12,7 @@ int main(void)
 	char *buffer = NULL; /* pointer for input */
 	size_t buffsize = 1024; /* size of input buff */
 	ssize_t ch; /* num of char read by getline */
-	
+
 	/* allocate mem for input buff */
 	buffer = malloc(buffsize * sizeof(char));
 
@@ -36,6 +35,7 @@ int main(void)
 		else
 			exit(EXIT_FAILURE);
 	}
+
 	/* Remove newline character from input */
 	buffer[strcspn(buffer, "\n")] = '\0';
 	builtins(buffer); /* check built-in command */
