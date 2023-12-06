@@ -48,14 +48,8 @@ int main(void)
 	free(buffer);
 	return (0);
 }
-/**
- * exitshell - the function that will exit out of the shell
- * @arg: argument 
- */
+/*exitshell - the function that will exit out of the shell*/
 void exitshell(void)
 {
-
-	printf("Exiting shell..\n");
 	exit(EXIT_SUCCESS);
-
 }
