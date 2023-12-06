@@ -1,9 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <dirent.h>
-#include <sys/types.h>
 #include "headers.h"
 /**
  * main - gives command line with prompt $ and reads imput
@@ -17,7 +11,7 @@ void exitshell(void);
 int main(void)
 {
 	char *buffer = NULL; /*pointer for input*/
-	size_t buffsize = 0; /*size of input buff*/
+	size_t buffsize = 1024; /*size of input buff*/
 	ssize_t ch; /*num of char read by getline*/
 	char *args[2];
 
@@ -44,6 +38,8 @@ int main(void)
 		}
 		/* Remove newline character from input */
 		buffer[strcspn(buffer, "\n")] = '\0';
+		if (buffer[0] == '\0')
+			continue;
 		/* Convert the buffer into an array of pointers */
 		args[0] = buffer;
 		args[1] = NULL;
