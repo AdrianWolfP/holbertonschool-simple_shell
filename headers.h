@@ -14,17 +14,11 @@ extern char **environ;
 
 void comandex(char *arg[]);
 
-void printpids();
-
 char *get_path(char *command);
 
 void exitshell(void);
 
 void token(char *args[]);
-
-void listfiles(char *args[]);
-
-void builtin(char *args[]);
 
 void printenv(void);
 

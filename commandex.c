@@ -5,7 +5,7 @@
 #include <sys/wait.h>
 #include "headers.h"
 
-/*
+/**
  * comandex - command execution for parent/child process
  *
  * @args: argument strings
@@ -15,7 +15,7 @@ void comandex(char *args[])
 {
 	pid_t pid = fork(); /*create child process*/
 	int stat; /*child status*/
-	extern char **environ;
+	char **environ;
 	char *command_path; /*command path*/
 
 	command_path = get_path(args[0]); /*get the command path*/

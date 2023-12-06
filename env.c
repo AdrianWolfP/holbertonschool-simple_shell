@@ -9,7 +9,7 @@
  */
 void printenv(void)
 {
-	extern char **environ;
+	char **environ;
 	char **env = environ;
 
 	while (*env != NULL)
