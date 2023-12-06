@@ -17,7 +17,7 @@ void exitshell(void);
 int main(void)
 {
 	char *buffer = NULL; /*pointer for input*/
-	size_t buffsize = 1024; /*size of input buff*/
+	size_t buffsize = 0; /*size of input buff*/
 	ssize_t ch; /*num of char read by getline*/
 	char *args[2];
 
@@ -42,6 +42,9 @@ int main(void)
 			else
 				exit(EXIT_FAILURE);
 		}
+		/* Remove newline character from input */
+		buffer[strcspn(buffer, "\n")] = '\0';
+		/* Convert the buffer into an array of pointers */
 		args[0] = buffer;
 		args[1] = NULL;
 		token(args);
