@@ -34,9 +34,6 @@ Directory of our <a href="https://github.com/Srixx24/holbertonschool-simple_shel
 ### 🐚 [env.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/env.c)
 - Gets enviorment
 
-### 🐚 [ls.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/ls.c)
-- ls command
-
 ### 🐚 [headers.h](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/headers.h)
 - Contains all header files 
 
