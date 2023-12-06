@@ -16,7 +16,9 @@
 Directory of our <a href="https://github.com/Srixx24/holbertonschool-simple_shell/">Simple Shell</a> project 
 </p></h3>
 
-This program works through files listed below to execute a shell that handles basic commands. The functions are betty compliant and do not work as well as we hoped. Use gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh to compile and enter ./hsh to see the ✨magic✨
+This program works through files listed below to execute a shell that handles basic commands. The functions are betty compliant and do not work as well as we hoped. 
+
+Use gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh to compile and enter ./hsh to see the ✨magic✨
 
 <br>
 
