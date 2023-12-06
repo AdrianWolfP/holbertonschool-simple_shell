@@ -1,4 +1,7 @@
-![Simple_Shell](https://github.com/Srixx24/holbertonschool-simple_shell/assets/144152489/3e47da97-6507-4efe-ab55-f68ce8685214)
+<p align="center">
+  <img width="2000" src="https://github.com/Srixx24/holbertonschool-simple_shell/assets/144152489/3e47da97-6507-4efe-ab55-f68ce8685214">
+</p>
+
 
 <p align="center">
 🌟 by <a href="https://github.com/AdrianWolfP/">Wolfgang</a> and  <a href="https://github.com/Srixx24/">Jackie</a> 🌟
@@ -13,15 +16,19 @@
 Directory of our <a href="https://github.com/Srixx24/holbertonschool-simple_shell/">Simple Shell</a> project 
 </p></h3>
 
+This program works through files listed below to execute a shell that handles basic commands. The functions are betty compliant and do not work as well as we hoped. 
+
+Use gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh to compile and enter ./hsh to see the ✨magic✨
+
 <br>
 
 ### 🐚 [main.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/main.c)
 - Gives a command prompt of $ and waits for command from user in an infinite loop.
-- Has an exit command of ctrl-D and exitshell
-- Makes call to token.c
+- Has an exit command of ctrl-D and the exit function
+- Makes call to token.c for tokenization
 
 ### 🐚 [commandex.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/commandex.c)
-- Program handles command execution with parent/child process
+- Function handles command execution with parent/child process
 - Pulls path environment from path.c with get_path
 
 ### 🐚 [tokenizing.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/tokenizing.c)
@@ -29,16 +36,14 @@ Directory of our <a href="https://github.com/Srixx24/holbertonschool-simple_shel
 - Makes calls to comandex and listfiles function within
 
 ### 🐚 [path.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/path.c)
+- Creates path and checks if executable
 - Searches path environment to find the variable name and returns a pointer
 
 ### 🐚 [env.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/env.c)
-- Gets enviorment
-
-### 🐚 [ls.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/ls.c)
-- ls command
+- Gets enviorment and prints to the command line
 
 ### 🐚 [headers.h](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/headers.h)
-- Contains all header files 
+- Contains all prototypes needed for the functions and necessary headers
 
 <details>
 <summary>Support Files</summary>
@@ -47,6 +52,6 @@ Directory of our <a href="https://github.com/Srixx24/holbertonschool-simple_shel
 <li><a href="https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/man_1_simple_shell/">MAN Page</a></li>
 </details>
 
-
-![jamaica-conch-shell-on-beach-tetra-images](https://github.com/Srixx24/holbertonschool-simple_shell/assets/144152489/92341cd5-3dc1-4d27-89a5-9c661aebe08a)
-
+<p align="center">
+  <img width="600" src="https://github.com/Srixx24/holbertonschool-simple_shell/assets/144152489/92341cd5-3dc1-4d27-89a5-9c661aebe08a">
+</p>
