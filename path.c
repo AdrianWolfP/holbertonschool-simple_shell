@@ -18,10 +18,7 @@ char *get_path(char *command)
 		return (NULL);
 	path_copy = strdup(path);
 	if (path_copy == NULL)
-	{
-		perror("copy error");
 		return (NULL);
-	}
 	tok = strtok(path_copy, ":"); /*tokenize with :*/
 	while (tok != NULL)
 	{
