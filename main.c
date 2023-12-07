@@ -15,7 +15,8 @@ int main(void)
 
 	/* allocate mem for input buff */
 	buffer = malloc(buffsize * sizeof(char));
-
+	if (buffer == NULL)
+		exit(EXIT_FAILURE);
 	while (1) /* start of infinite loop */
 	{
 		/* prompt */

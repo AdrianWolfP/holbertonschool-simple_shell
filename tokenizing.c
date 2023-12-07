@@ -22,18 +22,19 @@ void token(char *args[])
 	{
 		toka[x] = strdup(token);
 		/*set command to first token */
-		if ((x = 0) && (command == NULL))
+		if ((x == 0) && (command == NULL))
 			command = toka[x];
 		token = strtok(NULL, delims);
 		x++;
 	}
 	/*end of array with null*/
 	toka[x] = NULL;
+
+	if (command != NULL)
+		comandex(args, command);
 	/* frees mem for each element in toka*/
 	for (i = 0; i < x; i++)
 		free(toka[i]);
 	
 	free(toka);
-	if (command != NULL)
-		comandex(args, command);
 }
