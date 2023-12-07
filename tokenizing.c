@@ -26,9 +26,6 @@ void token(char *args[])
 	/*end of array with null*/
 	toka[x] = NULL;
 
-
-	/*calling comandex function*/
-		comandex(args, toka[0]);
 	for (i = 0; i < x; i++)
 		free(toka[i]);
 

@@ -18,30 +18,31 @@ int main(void)
 
 	while (1) /* start of infinite loop */
 	{
-	/* prompt */
-	printf("$ ");
-	fflush(stdout);
-	/* reading input with getline */
-	ch = getline(&buffer, &buffsize, stdin);
-	/* break loop with Ctrl-D */
-	if (ch == -1)
-	{
-		if (feof(stdin))
+		/* prompt */
+		printf("$ ");
+		fflush(stdout);
+		/* reading input with getline */
+		ch = getline(&buffer, &buffsize, stdin);
+		/* break loop with Ctrl-D */
+		if (ch == -1)
 		{
-			printf("\n");
-			exitshell();
-			break;
+			if (feof(stdin))
+			{
+				printf("\n");
+				exitshell();
+				break;
+			}
+			else
+			{
+				exit(EXIT_FAILURE);
+			}
 		}
-		else
-		{
-			printf("\n");
-			exit(EXIT_FAILURE);
-		}
-	}
 
-	/* Remove newline character from input */
-	buffer[strcspn(buffer, "\n")] = '\0';
-	builtins(buffer); /* check built-in command */
+		/* Remove newline character from input */
+		buffer[strcspn(buffer, "\n")] = '\0';
+		builtins(buffer); /* check built-in command */
+		memset(buffer, 0, buffsize);
+		token(&buffer);
 	}
 	free(buffer);
 	return (0);
@@ -63,7 +64,7 @@ void builtins(char *buffer)
 	{
 		exit(EXIT_SUCCESS);
 	}
-	else if (strcmp(buffer, "env") == 0)
+	if (strcmp(buffer, "env") == 0)
 	{
 		while (*env != NULL)
 		{
