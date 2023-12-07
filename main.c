@@ -29,11 +29,14 @@ int main(void)
 		if (feof(stdin))
 		{
 			printf("\n");
-			exit(EXIT_SUCCESS);
+			exitshell();
 			break;
 		}
 		else
+		{
+			printf("\n");
 			exit(EXIT_FAILURE);
+		}
 	}
 
 	/* Remove newline character from input */
@@ -42,6 +45,11 @@ int main(void)
 	}
 	free(buffer);
 	return (0);
+}
+/*exitshell - exits shell */
+void exitshell(void)
+{
+	exit(EXIT_SUCCESS);
 }
 /**
  * builtins - checking for built-in commands and going to commandex
@@ -63,6 +71,8 @@ void builtins(char *buffer)
 			env++;
 		}
 	}
+	else if (strcmp(buffer, "ls") == 0)
+		system("ls");
 	else
 	{
 		args[0] = buffer;

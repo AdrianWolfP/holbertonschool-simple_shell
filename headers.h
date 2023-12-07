@@ -18,6 +18,8 @@ char *get_path(char *command);
 
 void token(char *args[]);
 
+void exitshell(void);
+
 void builtins(char *buffer);
 
 #endif
