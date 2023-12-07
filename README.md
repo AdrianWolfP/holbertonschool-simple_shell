@@ -25,25 +25,26 @@ Use gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh to compile and ent
 ### 🐚 [main.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/main.c)
 - Gives a command prompt of $ and waits for command from user in an infinite loop.
 - Has an exit command of ctrl-D and the exit function
-- Makes call to token.c for tokenization
-
-### 🐚 [commandex.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/commandex.c)
-- Function handles command execution with parent/child process
-- Pulls path environment from path.c with get_path
+- Then checks for built in commands and makes call to tokenizing
 
 ### 🐚 [tokenizing.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/tokenizing.c)
 - Tokenizes input and stores it in an array
-- Makes calls to comandex and listfiles function within
+- Handles delimiters like space, tab, :, /, and new line
+- Calls the command executiong function with the first token
+
+### 🐚 [commandex.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/commandex.c)
+- Gets full path for the command with a call to path
+- Handles command execution with child process
+- Parent process waits for child to complete
 
 ### 🐚 [path.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/path.c)
 - Creates path and checks if executable
-- Searches path environment to find the variable name and returns a pointer
-
-### 🐚 [env.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/env.c)
-- Gets enviorment and prints to the command line
+- Searches path environment to find the command
+- Returns the full path to the command if found
 
 ### 🐚 [headers.h](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/headers.h)
-- Contains all prototypes needed for the functions and necessary headers
+- Contains all prototypes needed for the functions
+- Also stores all necessary headers used across the shell
 
 <details>
 <summary>Support Files</summary>
