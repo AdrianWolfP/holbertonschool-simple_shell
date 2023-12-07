@@ -30,7 +30,7 @@ Use gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh to compile and ent
 ### 🐚 [tokenizing.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/tokenizing.c)
 - Tokenizes input and stores it in an array
 - Handles delimiters like space, tab, :, /, and new line
-- Calls the command executiong function with the first token
+- Calls the command execution function with the first token
 
 ### 🐚 [commandex.c](https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/commandex.c)
 - Gets full path for the command with a call to path
