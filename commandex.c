@@ -17,9 +17,12 @@ void comandex(char *args[], char *command)
 		fprintf(stderr, "Command not found: %s\n", command);
 		return;
 	}
-	args[0] = command_path;
-	args[1] = command;
-	args[2] = NULL;
+	if (args != NULL)
+	{
+		args[0] = command_path;
+		args[1] = command;
+		args[2] = NULL;
+	}
 	if (pid == -1)
 	{
 		perror("fork"); /*error while forking*/
