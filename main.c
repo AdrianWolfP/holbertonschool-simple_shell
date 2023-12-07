@@ -19,8 +19,11 @@ int main(void)
 	while (1) /* start of infinite loop */
 	{
 		/* prompt */
-		printf("$ ");
-		fflush(stdout);
+		if (isatty(STDIN_FILENO))
+		{
+			printf("$ ");
+			fflush(stdout);
+		}
 		/* reading input with getline */
 		ch = getline(&buffer, &buffsize, stdin);
 		/* break loop with Ctrl-D */
