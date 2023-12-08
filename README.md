@@ -9,6 +9,7 @@
 
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) 
 
+
 <br>
 
 
@@ -52,6 +53,10 @@ Use gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh to compile and ent
 <li><a href="https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/AUTHORS/">AUTHORS</a></li>
 <li><a href="https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/man_1_simple_shell/">MAN Page</a></li>
 </details>
+
+<p align="right">
+  <img width="350" src="https://github.com/Srixx24/holbertonschool-simple_shell/assets/144152489/e02b05c2-e027-458a-ae7f-02870863de69">
+</p>
 
 <br>
 
