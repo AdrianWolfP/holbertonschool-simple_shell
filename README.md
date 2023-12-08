@@ -53,6 +53,14 @@ Use gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh to compile and ent
 <li><a href="https://github.com/Srixx24/holbertonschool-simple_shell/blob/master/man_1_simple_shell/">MAN Page</a></li>
 </details>
 
+<br>
+
+![Untitled drawing](https://github.com/Srixx24/holbertonschool-simple_shell/assets/144152489/9013a427-b722-4f40-bb23-4d77365888d2)
+
+<br>
+
 <p align="center">
   <img width="600" src="https://github.com/Srixx24/holbertonschool-simple_shell/assets/144152489/92341cd5-3dc1-4d27-89a5-9c661aebe08a">
 </p>
+
+
