@@ -15,7 +15,8 @@ int main(void)
 
 	/* allocate mem for input buff */
 	buffer = malloc(buffsize * sizeof(char));
-
+	if (buffer == NULL)
+		exit(EXIT_FAILURE);
 	while (1) /* start of infinite loop */
 	{
 		/* prompt */
@@ -45,7 +46,6 @@ int main(void)
 		buffer[strcspn(buffer, "\n")] = '\0';
 		builtins(buffer); /* check built-in command */
 		memset(buffer, 0, buffsize);
-		token(&buffer);
 	}
 	free(buffer);
 	return (0);
@@ -60,7 +60,7 @@ void exitshell(void)
  */
 void builtins(char *buffer)
 {
-	char *args[3];
+	char *args[10]; /*array for arg*/
 	char **env = environ;
 
 	if (strcmp(buffer, "exit") == 0)
@@ -77,10 +77,10 @@ void builtins(char *buffer)
 	}
 	else if (strcmp(buffer, "ls") == 0)
 		system("ls");
-	else
+	else /* commands set as first and second arg */
 	{
 		args[0] = buffer;
 		args[1] = NULL;
-		comandex(args, buffer);
+		token(args);
 	}
 }

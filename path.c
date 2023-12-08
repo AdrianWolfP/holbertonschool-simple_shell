@@ -6,20 +6,21 @@
  * @command: file being searched for in path
  * Return: NULL or full path
  */
+void *absolutepath(char *com);
 char *get_path(char *command)
 {
 	char *path = getenv("PATH"); /*get value of path environment*/
-	char *path_copy = NULL;  /*copy path for tokenize*/
-	char *full_path = NULL; /*full path command*/
+	char *path_copy = NULL, *full_path = NULL; /*fullpath and copy*/
 	char *tok = NULL; /*token for path*/
 	struct stat st;
 
+	absolutepath(command);
 	if (path == NULL)
 		return (NULL);
 	path_copy = strdup(path);
 	if (path_copy == NULL)
 		return (NULL);
-	tok = strtok(path_copy, ":"); /*tokenize with :*/
+	tok = strtok(path_copy, " :/"); /*tokenize with :*/
 	while (tok != NULL)
 	{
 		full_path = calloc(strlen(tok) + strlen(command) + 2, sizeof(char));
@@ -40,8 +41,28 @@ char *get_path(char *command)
 			return (full_path); /*return path if it is*/
 		}
 		free(full_path);
-		tok = strtok(NULL, ":"); /*move to next token*/
+		tok = strtok(NULL, " :/"); /*move to next token*/
 	}
 	free(path_copy);
+	return (NULL);
+}
+
+/*absolutepath - check if command is an absolute path */
+void *absolutepath(char *com)
+{
+	struct stat st;
+
+	if (com[0] == '/')
+	{
+		if (stat(com, &st) == 0 &&
+				S_ISREG(st.st_mode) && (st.st_mode & S_IXUSR))
+		{
+			return (com);
+		}
+		else
+		{
+			return (NULL);
+		}
+	}
 	return (NULL);
 }
