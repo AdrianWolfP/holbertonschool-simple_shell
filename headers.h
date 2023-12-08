@@ -22,4 +22,6 @@ void exitshell(void);
 
 void builtins(char *buffer);
 
+void *absolutepath(char *com);
+
 #endif
